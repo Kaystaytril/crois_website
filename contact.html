@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Crois</title>
+  <meta name="description" content="Start a conversation with Crois — on WhatsApp, naturally." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html" aria-label="Crois home">
+        <svg width="34" height="34" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="rg" x1="6" y1="4" x2="34" y2="36" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#D9A896"/>
+              <stop offset="0.55" stop-color="#B87566"/>
+              <stop offset="1" stop-color="#9C5A4E"/>
+            </linearGradient>
+          </defs>
+          <circle cx="20" cy="20" r="15" stroke="url(#rg)" stroke-width="1.6"/>
+          <ellipse cx="20" cy="20" rx="15" ry="5.6" stroke="url(#rg)" stroke-width="1.2"/>
+          <ellipse cx="20" cy="20" rx="5.6" ry="15" stroke="url(#rg)" stroke-width="1.2"/>
+          <ellipse cx="20" cy="20" rx="11.5" ry="15" transform="rotate(28 20 20)" stroke="url(#rg)" stroke-width="0.9" opacity="0.65"/>
+        </svg>
+        <span class="wordmark">Crois</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <canvas id="sphere-canvas" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="hero-inner" style="padding-bottom: 80px;">
+        <p class="eyebrow">Contact</p>
+        <h1>Start a <em>conversation</em>.</h1>
+        <p class="lede">We build on WhatsApp — so that's where we'd love to talk. Fill in the form and it opens a chat with us, message already written.</p>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap contact-grid">
+
+      <div class="contact-info reveal">
+        <div class="channel">
+          <span class="label">WhatsApp</span>
+          <a href="https://wa.me/27XXXXXXXXX" target="_blank" rel="noopener">Message us directly</a>
+        </div>
+        <div class="channel">
+          <span class="label">Email</span>
+          <a href="mailto:hello@crois.co.za">hello@crois.co.za</a>
+        </div>
+        <div class="channel">
+          <span class="label">Based in</span>
+          <p style="font-family: var(--font-display); font-size: 26px; font-weight: 500;">East London, South Africa</p>
+        </div>
+        <p style="color: var(--ink-soft); font-size: 15px; max-width: 380px;">We take on a limited number of partners at a time. If we're full, we'll tell you — and hold your place for the next opening.</p>
+      </div>
+
+      <form id="contact-form" class="reveal">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required />
+        </div>
+        <div class="field">
+          <label for="business">Business name</label>
+          <input type="text" id="business" name="business" autocomplete="organization" required />
+        </div>
+        <div class="field">
+          <label for="type">Type of business</label>
+          <input type="text" id="type" name="type" placeholder="Salon, gym, physio practice…" />
+        </div>
+        <div class="field">
+          <label for="message">What would you like help with?</label>
+          <textarea id="message" name="message"></textarea>
+        </div>
+        <p class="form-note">Sending opens WhatsApp with your message pre-filled — nothing is sent until you press send there.</p>
+        <button type="button" id="send-btn" class="btn btn-primary" style="border: none; cursor: pointer; font-family: var(--font-body);">Continue on WhatsApp</button>
+      </form>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span class="wordmark">Crois</span>
+      <p>East London, South Africa &nbsp;·&nbsp; © 2026 Crois. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="sphere.js"></script>
+  <script>
+    // Compose a WhatsApp message from the form — on brand for a WhatsApp-first agency.
+    // TODO: replace 27XXXXXXXXX with your real WhatsApp Business number (country code, no +).
+    document.getElementById("send-btn").addEventListener("click", function () {
+      const v = (id) => document.getElementById(id).value.trim();
+      const name = v("name"), business = v("business"), type = v("type"), msg = v("message");
+      if (!name || !business) {
+        alert("Please fill in your name and business name first.");
+        return;
+      }
+      let text = "Hi Crois — I'm " + name + " from " + business + ".";
+      if (type) text += " We're a " + type + ".";
+      if (msg) text += "\n\n" + msg;
+      window.open("https://wa.me/27XXXXXXXXX?text=" + encodeURIComponent(text), "_blank");
+    });
+  </script>
+</body>
+</html>
