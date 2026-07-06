@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crois — design &amp; automation studio</title>
+  <meta name="description" content="Crois is a design and automation studio for local businesses in South Africa. We build the website that earns attention, and the systems that turn it into booked clients." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html" aria-label="Crois home">
+        <svg width="34" height="34" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="rg" x1="6" y1="4" x2="34" y2="36" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E4B49D"/>
+              <stop offset="0.55" stop-color="#CE8B72"/>
+              <stop offset="1" stop-color="#AF6852"/>
+            </linearGradient>
+          </defs>
+          <circle cx="20" cy="20" r="15" stroke="url(#rg)" stroke-width="1.6"/>
+          <ellipse cx="20" cy="20" rx="15" ry="5.6" stroke="url(#rg)" stroke-width="1.2"/>
+          <ellipse cx="20" cy="20" rx="5.6" ry="15" stroke="url(#rg)" stroke-width="1.2"/>
+          <ellipse cx="20" cy="20" rx="11.5" ry="15" transform="rotate(28 20 20)" stroke="url(#rg)" stroke-width="0.9" opacity="0.65"/>
+        </svg>
+        <span class="wordmark">Crois</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <canvas id="sphere-canvas" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="hero-inner">
+        <p class="eyebrow">Design &amp; automation studio</p>
+        <h1>Design that gets you <em>noticed</em>. Systems that get you <em>booked</em>.</h1>
+        <p class="lede">Crois builds the website that earns attention — and the quiet automation behind it that turns that attention into booked, paying clients.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="contact.html">Start a conversation</a>
+          <a class="btn btn-ghost" href="services.html">See what we do</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">The method</p>
+        <h2>One approach, four stages.</h2>
+        <p>Whether we're building a website, an automation, or both — every engagement follows the same path: from being found, to being booked, to proving it worked.</p>
+      </div>
+      <div class="stages">
+        <div class="stage reveal">
+          <span class="stage-num">I</span>
+          <h3>Visibility</h3>
+          <p>A polished, fast website that makes you easy to find and easy to trust — the foundation everything else is built on.</p>
+        </div>
+        <div class="stage reveal">
+          <span class="stage-num">II</span>
+          <h3>Capture</h3>
+          <p>Enquiries answered in seconds and booked automatically, so nothing slips away while you're busy with a client.</p>
+        </div>
+        <div class="stage reveal">
+          <span class="stage-num">III</span>
+          <h3>Nurture</h3>
+          <p>Reminders cut no-shows. Follow-ups and review requests keep clients coming back — and telling others.</p>
+        </div>
+        <div class="stage reveal">
+          <span class="stage-num">IV</span>
+          <h3>Prove it</h3>
+          <p>A monthly report in plain language: what came in, what was booked, what it was worth. No jargon, no vanity metrics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">What we do</p>
+        <h2>Three ways we make a business grow.</h2>
+      </div>
+      <div class="services-row">
+        <div class="svc reveal">
+          <h3>Websites</h3>
+          <p>A modern, fast website designed around your business — built to be found, and to make you look as good as the work you do.</p>
+        </div>
+        <div class="svc reveal">
+          <h3>Automation</h3>
+          <p>Booking, reminders and review requests handled automatically on WhatsApp, so enquiries turn into appointments without you lifting a finger.</p>
+        </div>
+        <div class="svc reveal">
+          <h3>Growth</h3>
+          <p>An ongoing partnership that keeps it all running and improving — with a plain-language report each month of exactly what it delivered.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap reveal">
+      <p class="eyebrow">Limited partner slots</p>
+      <h2>We work with a small number of businesses at a time.</h2>
+      <p>That's deliberate — it's how every website and system we build gets built properly.</p>
+      <a class="btn btn-primary" href="contact.html">Ask about availability</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span class="wordmark">Crois</span>
+      <p>East London, South Africa &nbsp;·&nbsp; © 2026 Crois. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="sphere.js"></script>
+</body>
+</html>
